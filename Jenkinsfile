@@ -8,12 +8,10 @@ node('master') {
       echo 'Maven Project Compile'
      maven 'clean install'
      } 
-      post {
-          success {
+      
               junit 'target/surefire-reports/**/*.xml' 
-          }
+         
       }
-   }
 
 
    stage 'Test Case'
